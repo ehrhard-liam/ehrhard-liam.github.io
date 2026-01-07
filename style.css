@@ -1,0 +1,680 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+# Variables root
+*/
+
+:root {
+    /* Old variables */
+
+
+    --color-dark: #aa6f73;
+    --color-lite: #f5efe6;
+    --color-subtitles: #eea990;
+    --color-titles: #5c6bc0;
+
+    --color-cards-blue: rgba(124, 154, 204, 0.6);
+    --color-cards-steel: #90B7CF;
+    --color-cards-green: #B3DDCD;
+    --color-cards-litegreen: #D0E7DA;
+    --color-cards-pink: #E8BED3;
+
+    /* New variables */
+    --identity-background: #080f32;
+    --page-background: #eaeaea;
+
+    --cards-background: #fbfbfb;
+
+    --download-button-background: #fbfbfb;
+    --download-button-foreground: #333333;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--page-background);
+}
+
+/*
+# Découpage identité et main
+*/
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+/*
+# BLOCK : Identité
+*/
+
+.identity {
+    color: white;
+    width: 350px;
+    background-color: var(--identity-background);
+    box-shadow: 1px 1px 6px 1px #e2e2e2;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.identity h2.title {
+    margin: 10px 0;
+}
+
+.identity-name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.6em;
+}
+
+.identity-name .lastname {
+    display: block;
+    color: lightgrey;
+}
+
+.identity .subject {
+    padding: 10px 0;
+    color: var(--color-titles);
+}
+
+
+.id-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.id-contact .flex-social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.id-contact .element {
+    flex: 1;
+}
+
+.id-contact .element a:hover {
+    background-color: var(--page-background);
+    color: black;
+}
+
+.id-contact .element a {
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.id-contact .element.contact-basic {
+    width: 100%;
+    flex: unset;
+}
+
+
+.id-contact .element .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id-contact .element .icon i {
+    font-size: 24px;
+}
+
+.id-contact .element .icon .material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 1;
+}
+
+/* Identité : Adresse */
+.id-address {
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+}
+
+.id-address .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id-address .icon .material-symbols-rounded {
+    font-size: 32px;
+}
+
+.id-address .address-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    margin-right: 25px;
+}
+
+.formations {
+    grid-row: span 3;
+}
+
+/* ID : Infos sup */
+
+.id-informations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+}
+
+.id-informations .information {
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 10px;
+}
+
+.id-informations .information:last-of-type {
+    grid-column: span 2;
+}
+
+.id-informations .information .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SECTION PRESENTATION */
+
+section.presentation {
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+section.presentation p {
+    width: 100%;
+    padding: 10px;
+}
+
+section.presentation .presentation-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.experiences {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.technologies {
+    grid-column: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+
+/* Sections global */
+section h2 {
+    color: var(--color-titles);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4em;
+    margin: 5px 0;
+    padding: 5px 10px;
+    /*background-color: rgba(8, 15, 50, 1);*/
+}
+
+section {
+    color: black;
+    background-color: var(--cards-background);
+    box-shadow: 1px 1px 6px 1px #e2e2e2;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+/* Section Formation */
+
+.grid.formations {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.grid.formations .grid-item {
+    width: 100%;
+    display: flex;
+    transition: opacity 0.2s;
+}
+
+.grid.formations:has(.grid-item:hover) .grid-item:not(:hover) {
+    opacity: 0.2;
+}
+
+.grid.formations .grid-item:hover {
+    opacity: 1;
+}
+
+.grid.formations .grid-item:hover .timeline .line {
+    opacity: 1;
+}
+
+.grid.formations .grid-item .timeline-container {
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid.formations .grid-item .timeline-container .timeline {
+    width: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid.formations .grid-item .timeline-container .timeline .point {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: var(--color-titles);
+    border-radius: 50%;
+}
+
+.grid.formations .grid-item .timeline-container .timeline .line {
+    padding: 2px 0;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    width: 3px;
+    aspect-ratio: 1/1;
+    background-color: var(--color-titles);
+    border-radius: 10px;
+    flex: 1;
+}
+
+.grid.formations .grid-item .content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    gap: 4px;
+}
+
+.grid.formations .grid-item .content-container .date {
+    color: var(--color-titles);
+    font-size: 1em;
+    margin-top: -4px;
+}
+
+.grid.formations .grid-item .content-container .title {
+    font-weight: bold;
+}
+
+.grid.formations .grid-item .content-container .location {
+    color: grey;
+    font-size: 0.9em;
+}
+
+.grid.formations .grid-item .content-container .details {
+    color: grey;
+    font-size: 0.9em;
+}
+
+.grid.formations .grid-item .content-container .competences {
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+.grid.formations .grid-item .content-container .competences li {
+    padding: 2px 0;
+}
+
+/* GRID Expériences */
+.grid.experiences .grid-item .content-container .job-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    font-size: 0.9em;
+    gap: 4px;
+}
+
+.grid.experiences .grid-item .content-container .job-skills li {
+    background-color: #eaeaea;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px dashed grey;
+}
+
+/* BLOCK : Compétences informatiques */
+section.technologies .grid {
+    width: 85%;
+    padding: 10px 0;
+    color: #333333;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+section.technologies .grid .grid-item {
+    padding: 6px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+section.technologies .grid .grid-item .detail {
+    color: grey;
+}
+
+section.technologies .grid .separator {
+    display: block;
+    margin: 8px 0;
+    list-style: none;
+}
+
+section.technologies .grid .separator .border {
+    height: 1px;
+    width: 100px;
+    background-color: lightgrey;
+}
+
+.section.technologies .grid .grid-item .icon {
+    color: grey;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.section.technologies .grid .grid-item .icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Séparation identité et téléchargement */
+.identity {
+    display: flex;
+    flex-direction: column;
+}
+
+.identity .content-section {
+    flex: 1;
+}
+
+/* Download button */
+
+.identity .download-section button {
+    background-color: var(--download-button-background);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.identity .download-section button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+    width: 100%;
+    color: var(--download-button-foreground);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.identity .download-section button:hover {
+    background: var(--download-button-foreground);
+    color: var(--download-button-background);
+}
+
+.identity .download-section button:hover a {
+    color: var(--download-button-background);
+}
+
+/* BLOCK : Langages */
+.grid.languages {
+    width: 100%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.grid.languages .grid-item {
+    background: #eaeaea;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid.languages .grid-item .flag {
+    padding: 0 5px;
+}
+
+.grid.languages .grid-item .label {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.grid.languages .grid-item .level {
+    color: #555555;
+}
+
+/* BLOCK : Centres intérêt */
+.hobbies-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    gap: 10px;
+    height: 100%;
+    margin: 5px;
+}
+
+.hobbies-list li {
+    border: 1px dashed grey;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BLOCK : Compétences - Soft Skills */
+.soft-skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    gap: 10px;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+}
+
+.soft-skills-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed grey;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.soft-skills-list li:last-of-type {
+    grid-column: span 2;
+}
+
+/* RESPONSIVE */
+
+@media screen and (min-width: 800px) and (max-width: 1400px) {
+    .main-wrapper {
+
+        height: 100vh;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    main>section.section {
+        margin: 0;
+        padding: 20px 10px;
+        grid-row: unset;
+        grid-column: unset;
+    }
+
+    main>section.presentation {
+        grid-row: 1;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: white;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
+
+    div.identity {
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: unset;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    main>section.section {
+        margin: 0;
+        padding: 20px 10px;
+        grid-row: unset;
+        grid-column: span 2;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: white;
+    }
+
+    main>section.presentation {
+        grid-row: 1;
+    }
+
+    /*main>section.section.accent {
+        background-color: #eaeaea;
+    }*/
+
+    /* RESPONSIVE : Section informatique */
+
+    section.technologies .grid .separator {
+        display: block;
+        width: 100%;
+    }
+
+    section.technologies .grid .separator .border {
+        margin: 0 auto;
+    }
+
+    section.technologies .grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section.technologies .grid .grid-item .icon {
+        margin-left: 0;
+    }
+
+    section.technologies .grid .grid-item {
+        padding: 10px;
+        justify-content: center;
+        border: 1px dashed grey;
+        margin: 5px;
+        border-radius: 10px;
+    }
+
+    /* RESPONSIVE : Langages */
+    .grid.languages {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* RESPONSIVE : Compétences Soft skills */
+    .soft-skills-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+        padding: 5px 20px;
+    }
+
+    .soft-skills-list li {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .id-contact {
+        flex: 1;
+    }
+
+    .id-contact .element.contact-basic {
+        flex: 1;
+    }
+}

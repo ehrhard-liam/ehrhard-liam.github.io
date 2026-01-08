@@ -63,6 +63,7 @@ body {
     margin: 20px;
     border-radius: 20px;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .identity h2.title {
@@ -239,12 +240,14 @@ section.presentation .presentation-content {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 4;
+    overflow-y: auto;
 }
 
 .technologies {
     grid-column: 4;
     grid-row-start: 2;
     grid-row-end: 5;
+    overflow-y: auto;
 }
 
 
@@ -267,9 +270,14 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 10px 15px;
+    overflow: hidden;
 }
 
 /* Section Formation */
+
+.formations {
+    overflow-y: auto;
+}
 
 .grid.formations {
     display: grid;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EHRHARD Liam — CV</title>
     <style>
-/* --- CONFIGURATION DES POLICES (LOCALES) --- */
+/* --- POLICES (LOCAL) --- */
 :root {
     --glass-bg: rgba(255, 255, 255, 0.45);
     --glass-border: rgba(255, 255, 255, 0.7);
@@ -14,7 +14,7 @@
     --accent: #4b7bec;
     --ease-ios: cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Font stack système (Pas d'import externe) */
+    /* Font stack system (No import) */
     --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
@@ -35,7 +35,9 @@ body {
     top: 35px; left: 50%;
     transform: translate(-50%, 0);
     width: 94%; max-width: 1000px;
-    min-height: 70px; padding: 0 40px;
+    min-height: 70px;
+    padding-left: 40px;
+    padding-right: 10px;
     background: var(--glass-bg);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
@@ -69,8 +71,8 @@ h1 { font-size: 1.2rem; letter-spacing: -0.05em; font-weight: 800; line-height: 
 .nav-menu a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--accent); border-radius: 2px; }
 
 .contact-dock { display: flex; justify-content: center; gap: 15px; padding-top: 0; width: auto; transition: 0.6s var(--ease-ios); margin-left: auto; }
-.contact-dock a { text-decoration: none; color: var(--text-main); opacity: 0.5; transition: 0.3s; display: flex; align-items: center; }
-.contact-dock a:hover { opacity: 1; transform: translateY(-3px); color: var(--accent); }
+.contact-dock a:not(.language) { text-decoration: none; color: var(--text-main); opacity: 0.5; transition: 0.3s; display: flex; align-items: center; }
+.contact-dock a:not(.language):hover { opacity: 1; transform: translateY(-3px); color: var(--accent); }
 
 /* --- BENTO CONTENT --- */
 .main-content { padding: 140px 5% 10vh; display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
@@ -117,6 +119,20 @@ h2 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
 @media (max-width: 768px) { .card-large, .card-small { grid-column: span 12; } .nav-menu { display: none; } .liquid-glass { min-height: 70px; } }
 
 /* Scroll indicator removed in header-only layout */
+
+.language-button {
+    border: none;
+    border-radius: 30px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    background: rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+.language-button:hover {
+    background: rgba(0,0,0,0);
+}
     </style>
 </head>
 <body>
@@ -132,7 +148,7 @@ h2 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
             </div>
         </div>
 
-        <div class="contact-dock">
+        <div class="nav-menu contact-dock">
             <a href="mailto:liam.ehrhard@sfr.fr" title="Email">
                 <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="currentColor">
                     <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm330.5-288.5Q496-450 501-453l283-177q8-5 12-12.5t4-16.5q0-20-17-30t-35 1L480-520 212-688q-18-11-35-.5T160-659q0 10 4 17.5t12 11.5l283 177q5 3 10.5 4.5T480-447q5 0 10.5-1.5Z"/>
@@ -155,15 +171,13 @@ h2 { font-size: 2rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
             </a>
         </div>
 
-        <nav class="nav-menu">
-            <a href="#about">Bio</a>
-            <a href="#formations">Cursus</a>
-            <a href="#exp">Expériences</a>
-            <a href="#stack">Stack</a>
-        </nav>
+        <div class="contact-dock">
+            <a href="en/" class="language">
+                <button class="language-button">🇬🇧 EN</button>
+            </a>
+        </div>
     </div>
 </header>
-
 <main class="main-content">
     <section class="bento-card card-large" id="about">
         <span class="category">Présentation</span>
